@@ -1,4 +1,4 @@
-## TemplateApp
+## BotTest
 
 Заготовка для создания пакетов для composer
 
