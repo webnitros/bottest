@@ -1,39 +1,40 @@
 {
-    "name": "webnitros/looking",
-    "description": "Тестирование",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "webnitros",
-            "email": "info@bustep.ru"
-        }
-    ],
-    "scripts": {
-        "tests" : "phpunit",
-        "up:release": "gh release create \"v1.0.3\" --generate-notes"
-    },
-    "keywords": [
-        "client"
-    ],
-    "require": {
-        "php": ">=7.0.0",
-        "guzzlehttp/guzzle": "~6.5.5",
-        "electrolinux/phpquery": "^0.9.6",
-        "tomverran/robots-txt-checker": "^1.17"
-    },
-    "require-dev": {
-        "roave/security-advisories": "dev-latest",
-        "phpunit/phpunit": "9.*",
-        "mockery/mockery": "^1.4"
-    },
-    "autoload": {
-        "psr-4": {
-            "App\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Tests\\": "tests/"
-        }
+  "name": "webnitros/looking",
+  "description": "Тестирование",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "webnitros",
+      "email": "info@bustep.ru"
     }
+  ],
+  "scripts": {
+    "tests": "phpunit",
+    "git": "git add -A && git commit -m \"autocommit\" && git push",
+    "up:release": "gh release create \"v1.0.4\" --generate-notes"
+  },
+  "keywords": [
+    "client"
+  ],
+  "require": {
+    "php": ">=7.0.0",
+    "guzzlehttp/guzzle": "~6.5.5",
+    "electrolinux/phpquery": "^0.9.6",
+    "tomverran/robots-txt-checker": "^1.17"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-latest",
+    "phpunit/phpunit": "9.*",
+    "mockery/mockery": "^1.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  }
 }
