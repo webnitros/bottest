@@ -9,7 +9,7 @@
         }
     ],
     "scripts": {
-        "tests" : "phpunit --bootstrap bootstrap.php",
+        "tests" : "phpunit",
         "up:release": "gh release create \"v1.0.2\" --generate-notes"
     },
     "keywords": [
@@ -17,8 +17,10 @@
     ],
     "require": {
         "php": ">=7.0.0",
-        "symfony/dotenv": "^5.2",
-        "guzzlehttp/guzzle": "~6.5.5"
+        "guzzlehttp/guzzle": "~6.5.5",
+        "electrolinux/phpquery": "^0.9.6",
+        "tomverran/robots-txt-checker": "^1.17",
+        "mistralys/text-diff": "^2.0"
     },
     "require-dev": {
         "roave/security-advisories": "dev-latest",

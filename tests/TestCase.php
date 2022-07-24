@@ -8,6 +8,7 @@
 
 namespace Tests;
 
+use App\Bot\Site;
 use Mockery\Adapter\Phpunit\MockeryTestCase;
 
 abstract class TestCase extends MockeryTestCase
@@ -15,5 +16,10 @@ abstract class TestCase extends MockeryTestCase
     protected function setUp(): void
     {
         parent::setUp();
+    }
+
+    public function site($domain = 'bustep.ru')
+    {
+        return new Site($domain);
     }
 }
