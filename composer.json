@@ -19,7 +19,7 @@
         "php": ">=7.0.0",
         "guzzlehttp/guzzle": "~6.5.5",
         "electrolinux/phpquery": "^0.9.6",
-        "tomverran/robots-txt-checker": "^1.17",
+        "tomverran/robots-txt-checker": "^1.17"
     },
     "require-dev": {
         "roave/security-advisories": "dev-latest",
