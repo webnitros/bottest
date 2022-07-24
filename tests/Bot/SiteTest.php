@@ -15,37 +15,24 @@ class SiteTest extends TestCase
 {
     public function testUrl()
     {
-        $Site = new Site('bustep.ru');
-        self::assertEquals('https://bustep.ru', $Site->url());
+        $Site = $this->site();
+        self::assertEquals('https://' . SITE, $Site->url());
     }
 
     public function testPage()
     {
-        $Site = new Site('bustep.ru');
-        self::assertEquals('https://bustep.ru/markdown/', $Site->page('/markdown/'));
+        $Site = $this->site();
+        self::assertEquals('https://' . SITE . '/markdown/', $Site->page('/markdown/'));
     }
 
     public function testDomain()
     {
-        $Site = new Site('bustep.ru');
-        self::assertEquals('bustep.ru', $Site->domain());
+        self::assertEquals(SITE, $this->site()->domain());
     }
 
     public function testStatus()
     {
-        $Site = new Site('bustep.ru');
-        self::assertEquals(200, $Site->service()->status());
+        self::assertEquals(200, $this->site()->service()->status());
     }
 
-    public function testRobotsIndexMain()
-    {
-        $Site = new Site('bustep.ru');
-        self::assertTrue($Site->service()->robotsIndexMain());
-    }
-
-    public function testRobotsNoIndexMain()
-    {
-        $Site = new Site('dev2.massive.ru');
-        self::assertFalse($Site->service()->robotsIndexMain());
-    }
 }

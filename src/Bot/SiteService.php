@@ -29,15 +29,11 @@ class SiteService
         return $this->site;
     }
 
-    /**
-     * Отвечает однозначно что сайт индексируется
-     * @return bool|null
-     */
-    public function robotsIndexMain()
+    protected function page()
     {
-        $res = $this->site()->robots();
-        return (new RobotsTxt($res))->isAllowed('my-user-agent', '/');
+        return new Page($this->site(), '/');
     }
+
 
     /**
      * Вернет код статуса

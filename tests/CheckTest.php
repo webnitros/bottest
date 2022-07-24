@@ -15,24 +15,7 @@ class CheckTest extends TestCase
 
     public function additionProvider()
     {
-        return [
-            0 => [
-                'domain' => 'dev2.massive.ru',
-                'page' => '/',
-                'indexing' => false,
-                'title' => 'Интернет-магазин светильников и люстр Fandeco. {%} по России! | Fandeco.ru в Москве',
-                'description' => 'Крупнейший магазин светильников и люстр в Москве с {%} по стране. В каталоге более 100 000 товаров для освещения помещений. Доставка по всей России в магазины и пункты выдачи. Звоните и заказывайте 8 (800) 222-16-89.',
-                'keywords' => 'Свет,Москва',
-            ],
-            1 => [
-                'domain' => 'fandeco.ru',
-                'page' => '/',
-                'indexing' => true,
-                'title' => 'Интернет-магазин люстр и светильников в Москве Fandeco | {%} по России',
-                'description' => 'Крупнейший магазин светильников и люстр в Москве с {%} по стране. В каталоге более 100 000 товаров для освещения помещений. Доставка по всей России в магазины и пункты выдачи. Звоните и заказывайте 8 (800) 222-16-89.',
-                'keywords' => 'Свет,Москва',
-            ]
-        ];
+        return SITES;
     }
 
     /**
@@ -60,7 +43,5 @@ class CheckTest extends TestCase
         $actual = $Page->keywords();
         $expected = $Page->elements()->expected($keywords, $actual);
         self::assertEquals($expected, $actual);
-
-
     }
 }

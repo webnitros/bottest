@@ -18,7 +18,7 @@ abstract class TestCase extends MockeryTestCase
         parent::setUp();
     }
 
-    public function site($domain = 'bustep.ru')
+    public function site($domain = SITE)
     {
         return new Site($domain);
     }

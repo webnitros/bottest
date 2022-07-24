@@ -20,6 +20,9 @@ class IndexedRobots
      */
     public static function get(Site $site, Page $page, $userAgent = 'my-user-agent')
     {
+        if ($user = $site->userAgent()) {
+            $userAgent = $user->name();
+        }
         return (new RobotsTxt($site->robots()))->isAllowed($userAgent, $page->uri());
     }
 }

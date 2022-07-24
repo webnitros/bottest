@@ -6,6 +6,7 @@
 namespace App\Bot;
 
 
+use App\Bot\Helpers\UserAgent;
 use App\Helpers\RequestClient;
 
 class Site
@@ -30,6 +31,10 @@ class Site
      * @var SiteService
      */
     private $service;
+    /**
+     * @var UserAgent
+     */
+    private $userAgent;
 
     public function __construct(string $domain, $https = true)
     {
@@ -45,6 +50,17 @@ class Site
             throw new \Exception('Статус код сайта не равно 200. Тестирование не будет проводиться');
         }
         $this->service = new SiteService($this);
+    }
+
+    public function setUserAgent(UserAgent $userAgent)
+    {
+        $this->userAgent = $userAgent;
+        return $this;
+    }
+
+    public function userAgent()
+    {
+        return $this->userAgent;
     }
 
     public function domain()
