@@ -54,6 +54,7 @@ class Site
 
     public function setUserAgent(UserAgent $userAgent)
     {
+        $this->client()->userAgent($userAgent->name());
         $this->userAgent = $userAgent;
         return $this;
     }
