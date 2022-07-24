@@ -34,6 +34,7 @@ class CheckTest extends TestCase
 
         $actual = $Page->title();
         $expected = $Page->elements()->expected($title, $actual);
+
         self::assertEquals($expected, $actual);
 
         $actual = $Page->description();

@@ -15,6 +15,7 @@ use App\Bot\Data\Keywords;
 use App\Bot\Data\NoIndex;
 use App\Bot\Data\Title;
 use App\Bot\Page;
+use App\Helpers\Funcompare;
 
 class Elements
 {
@@ -105,16 +106,7 @@ class Elements
      */
     public function expected($expected, $actual)
     {
-        $array = explode('{%}', $expected);
-        if (count($array) == 2) {
-            $sep = $actual;
-            foreach ($array as $item) {
-                $sep = str_ireplace($item, '', $sep);
-            }
-            $expected = str_ireplace('{%}', $sep, $expected);
-
-        }
-        return $expected;
+        return (new Funcompare())->compareText($expected, $actual);
     }
 
 }
