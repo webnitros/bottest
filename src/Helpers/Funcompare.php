@@ -40,18 +40,8 @@ class Funcompare
                 } else {
                     $foundKey = array_search($oldArr[$tmpOldIndex], $newArr, true);
                     if ($foundKey != '' && $foundKey > $tmpNewIndex) {
-
-
-                        $lastNew = $resArr;
-
-                        $last = array_pop($lastNew);
-                        // Если равно
-                        if ($last === '<old:{%}>') {
-                            array_pop($resArr);
-                        }
                         for ($p = $tmpNewIndex; $p < $foundKey; $p++) {
-                            array_push($resArr, $newArr[$p]);
-                            #array_push($resArr, sprintf('<%s:%s>', $this->_newLabel, $newArr[$p]));
+                            array_push($resArr, sprintf('<%s:%s>', $this->_newLabel, $newArr[$p]));
                         }
                         array_push($resArr, $oldArr[$tmpOldIndex]);
                         $tmpOldIndex++;
