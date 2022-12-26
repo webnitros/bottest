@@ -36,7 +36,7 @@ class Site
      */
     private $userAgent;
 
-    public function __construct(string $domain, $https = true)
+    public function __construct(string $domain, $https = true, $ping = true)
     {
         $this->domain = $domain;
         $this->https = $https;
@@ -45,9 +45,10 @@ class Site
             'base_uri' => $this->url(),
             'verify' => $https
         ]);
-
-        if ($this->client->ping('/') !== 200) {
-            throw new \Exception('Статус код сайта не равно 200. Тестирование не будет проводиться');
+        if ($ping) {
+            if ($this->client->ping('/') !== 200) {
+                throw new \Exception('Статус код сайта не равно 200. Тестирование не будет проводиться');
+            }
         }
         $this->service = new SiteService($this);
     }

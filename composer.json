@@ -11,7 +11,7 @@
   "scripts": {
     "tests": "phpunit",
     "git": "git add -A && git commit -m \"autocommit\" && git push",
-    "up:release": "gh release create \"v1.0.8\" --generate-notes"
+    "up:release": "gh release create \"v1.1.9\" --generate-notes"
   },
   "keywords": [
     "client"
